@@ -1,0 +1,23 @@
+<div>
+  <h3 class="text-center text-success">ViewChild/ViewChildren</h3>
+  <p #my>This is an important message</p>
+  <strong #my1>This is an important message</strong>
+  <h1 #my1>Minakshi</h1>
+  <h2 #my1>Snehal</h2>
+  <p #my1>Practicing on ViewChild/ViewChildren</p>
+  <h3 class="text-center text-success">Counter:{{ child?.counter }}</h3>
+  <div>
+    <button (click)="inc()">Increment counter</button>
+    <button (click)="dec()">Decrement counter</button>
+  </div>
+  <app-counter #counterChildView></app-counter>
+</div>
+
+<div>
+  <h3>ngStyle Example</h3>
+  <ul *ngFor="let person of people">
+    <li [ngClass]="{ 'text-success': true }">
+      {{ person.name }} ** {{ person.Country }}
+    </li>
+  </ul>
+</div>

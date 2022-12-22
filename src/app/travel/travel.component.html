@@ -1,0 +1,38 @@
+<p>{{ userData | json }}</p>
+<table class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>{{ userData.id }}</td>
+      <td>{{ userData.name }}</td>
+      <td>{{ userData.username }}</td>
+      <td>{{ userData.email }}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <ul class="nav nav-tabs mr-auto">
+    <li class="nav-item active">
+      <a
+        class="nav-link"
+        routerLink="travel1"
+        routerLinkActive="router-link-active"
+        >Travel1 <span class="sr-only">(current)</span></a
+      >
+    </li>
+    <li class="nav-item active">
+      <a
+        class="nav-link"
+        routerLink="travel2"
+        routerLinkActive="router-link-active"
+        >Travel2 <span class="sr-only">(current)</span></a
+      >
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

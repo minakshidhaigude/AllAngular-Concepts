@@ -1,0 +1,76 @@
+<div>
+  <input type="text" class="form-control" #ref [(ngModel)]="userName" />
+</div>
+<h3>{{ ref.value }}</h3>
+<h1>{{ pageTitle }}</h1>
+<!--<img src="{{ imageUrl }}" alt="Profile-image" />-->
+<button disabled="{{ btnStatus }}">click using interpollation</button>
+<button [disabled]="btnStatus">click</button><br />
+<button class="btn btn-primary" (click)="changeTitle()">Change Title</button>
+<br /><br />
+<input type="text" [(ngModel)]="username" />
+<h4>welcome {{ username }}</h4>
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+
+<p>{{ errMsg }}</p>
+<table class="table table-strip">
+  <tr class="bg-primary">
+    <th>Index</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>Salary</th>
+    <th>DOB</th>
+    <th>Age</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let data of userObj; let i = index">
+      <td>
+        <a [routerLink]="['/travel', i + 1]">{{ i + 1 }}</a>
+      </td>
+      <td>{{ data.id }}</td>
+      <td>{{ data.name | uppercase }}</td>
+      <td>{{ data.city | lowercase }}</td>
+      <td>{{ data.salary | currency: "INR":"code":"3.3" }}</td>
+      <td>{{ data.dob | date: "MM/dd/yyyy" }}</td>
+      <td>{{ data.dob | age }}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- <pre>{{ userObj | json }}</pre> -->
+
+<div class="text-center" *ngIf="isUserLoggedIn; else logout">
+  <h3>WELCOME {{ username }}</h3>
+</div>
+<ng-template #logout>
+  <p>User is not log In</p>
+</ng-template>
+<div>
+  <label for="">Select Countries:</label>
+  <select name="" (change)="choice($event)">
+    <option value="">Select Country</option>
+    <option *ngFor="let c of countries" [value]="c.code">
+      {{ c.country }}
+    </option>
+  </select>
+</div>
+<div>code of selected country : {{ selectedValue }}</div>
+
+<div [ngSwitch]="selectedValue">
+  <div *ngSwitchCase="'Ind'" class="jumbotron">
+    <h1>Indian calling code is +91</h1>
+  </div>
+  <div *ngSwitchCase="'Us'" class="jumbotron">
+    <h1>Us calling code is +380</h1>
+  </div>
+  <div *ngSwitchCase="'Jap'" class="jumbotron">
+    <h1>Japnese calling code is +43</h1>
+  </div>
+  <div *ngSwitchDefault class="jumbotron">
+    <h1>Select your country</h1>
+  </div>
+</div>
+<div>Parent to child communication:{{ pData }}</div>
+<button (click)="passData()">Send data to parent</button>

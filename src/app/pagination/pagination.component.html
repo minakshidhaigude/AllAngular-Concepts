@@ -1,0 +1,14 @@
+<p>pagination works!</p>
+<div *ngFor="let course of courses">
+  <ng-container
+    *ngIf="course == 'Angular' || course == 'Mongodb'; else templateref"
+  >
+    <h1>{{ course }} FrontEnd Developer</h1>
+  </ng-container>
+  <ng-template #templateref>
+    <h1>{{ course }} Backend Developer</h1>
+  </ng-template>
+</div>
+<div>
+  <strong>{{ promiseVal | json }}</strong>
+</div>

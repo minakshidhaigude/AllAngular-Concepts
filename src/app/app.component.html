@@ -1,0 +1,139 @@
+<!-- <app-binding
+  [pData]="parentData"
+  (notify)="fromChildData($event)"
+></app-binding> -->
+<!-- <div>DATA:{{ childToParent }}</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- <a class="navbar-brand" href="#">User Management</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/binding']"
+          routerLinkActive="router-link-active"
+          >User <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/viewchild']"
+          routerLinkActive="router-link-active"
+          >ViewChild <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/product-dashboard']"
+          routerLinkActive="router-link-active"
+          >Content-Projection <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/display']"
+          routerLinkActive="router-link-active"
+          >Display<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/form']"
+          routerLinkActive="router-link-active"
+          >TDForm<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/auth']"
+          routerLinkActive="router-link-active"
+          >Login<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/register']"
+          routerLinkActive="router-link-active"
+          >Register <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/covid']"
+          routerLinkActive="router-link-active"
+          >Covid19 <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/basic']"
+          routerLinkActive="router-link-active"
+          >Basics <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/rxjs']"
+          routerLinkActive="router-link-active"
+          >RxJSOperators <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/pagination']"
+          routerLinkActive="router-link-active"
+          >Pagination <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="[
+            '/about',
+            {
+              outlets: {
+                map: ['location'],
+                feed: ['feedback']
+              }
+            }
+          ]"
+          >About <span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>

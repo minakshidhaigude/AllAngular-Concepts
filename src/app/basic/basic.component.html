@@ -1,0 +1,30 @@
+<p>basic works!</p>
+<div>
+  <strong>{{ userObject | json }}</strong>
+  <h2>List of employees</h2>
+  <ul *ngFor="let emp of employees">
+    <li>{{ emp | custom: 4 }}</li>
+  </ul>
+</div>
+<div>
+  <input type="text" #empname />
+  <button (click)="addEmp(empname.value)">Add</button>
+  <p>{{ employees | custom }}</p>
+</div>
+<div class="myclass" appSetbackground>
+  <p>
+    This is a demo HTML content to understand custom attribute directive in
+    Angular
+  </p>
+</div>
+<div class="myclass" appHighlight>
+  <p>
+    This is a demo HTML content to understand Renderer2 directive in Angular
+  </p>
+</div>
+<div appHover>
+  <p>This is a demo HTML content to understand @HostListener in Angular</p>
+</div>
+<div class="myclass" appBetterhighlight>
+  <p>This is a demo HTML content to understand @HostBinding in Angular</p>
+</div>

@@ -1,0 +1,59 @@
+**Binding--
+Interpollation {{}} --> It require expression to return a string
+Property [] --> If we want to set element properties to non-string data values  
+ we must use property binding.
+ Dealing with non-string expression use property[] binding
+
+ **Installing bootstrap-->
+ 1.using cdn
+ 2.npm install bootstrap
+ Inside angular.json file -->
+ "styles":["../node_modules/bootstrap/dist/css/bootstrap.min.css",],
+ "scripts":["../node_modules/bootstrap/dist/js/bootstrap.min.js"]
+
+ ** ngtemplate --> is an angular element which can be used for rendering templates
+ **ngSwitch --> is used to display the one element from set of all possible element names
+
+ Error --> Property 'pData' has no initializer and is not definitely assigned in the constructor.
+17   @Input() pData!: string; 
+
+** json pipe --> normally used in debugging mode data coming from backend services
+
+** custom pipe --> transform(value,arg)
+This value is coming from on which variable we have assign this custome pipe so that variables 
+value is displayed in that "value" arguments of the transform function
+
+** 404 error --> url is not correct
+
+** Advanced routing --> http://localhost:4200/about/(map:location//feed:feedback)
+In about component -- use <router-outlet name="map"></router-outlet>
+                          <router-outlet name="feed"></router-outlet>
+Inside app-routing.module.ts --  
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      { path: 'location', outlet: 'map', component: LocationComponent },
+      { path: 'feedback', outlet: 'feed', component: FeedbackComponent },
+    ],
+  },
+  Inside app.component.html -->
+  <a
+          class="nav-link"
+          [routerLink]="[
+            '/about',
+            {
+              outlets: {
+                map: ['location'],
+                feed: ['feedback']
+              }
+            }
+          ]"
+          >About <span class="sr-only">(current)</span></a
+        >                         
+
+** Guards -->
+Guards are implemented in a way like service.
+Registered the guard in app.module.ts in providers:[]
+command for guard-->
+ng g guard guards/admin --implements CanActivateChild

@@ -1,0 +1,29 @@
+<form #myForm="ngForm" appMystyle (ngSubmit)="submit(myForm)">
+  <label for="">First Name</label>
+  <input
+    class="form-control"
+    type="text"
+    name="fname"
+    #fname="ngModel"
+    required
+    minlength="3"
+    pattern="[a-zAZ]+$"
+    ngModel
+  />
+  <p class="text-danger" *ngIf="fname.invalid && fname.touched && fname.dirty">
+    Valid name
+  </p>
+  <br />
+  <label for="">Last Name</label>
+  <input class="form-control" type="text" name="lname" ngModel />
+  <br />
+  <label for="">Mobile Number</label>
+  <input class="form-control" type="number" name="mn" ngModel />
+  <br />
+  <label for="">Email</label>
+  <input type="email" name="email" ngModel />
+  <br />
+  <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">
+    Submit
+  </button>
+</form>
